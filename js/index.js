@@ -21,7 +21,10 @@ for (let index = 0; index < seats.length; index++) {
             seat.classList.remove('bg-[#1DD100]')
             selectedSeat.splice(selectedSeat.indexOf(seatNumber), 1)
         } else {
-            if (selectedSeat.length >= 4) return
+            if (selectedSeat.length >= 4) {
+                alert("You can't buy more than 4 tickets")    
+                return
+            }
             seat.classList.add('bg-[#1DD100]')
             selectedSeat.push(seatNumber)
         }
