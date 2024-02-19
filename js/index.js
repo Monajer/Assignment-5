@@ -100,6 +100,7 @@ document.getElementById('nextBtn').addEventListener('click', function () {
 // ? continue button
 document.getElementById('continueBtn').addEventListener('click', function () {
     document.getElementById('myAlert').classList.add('hidden')
+    location.reload() 
 });
 
 function getSeat(seatNumber) {
