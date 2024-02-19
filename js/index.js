@@ -8,9 +8,7 @@ const seats = document.querySelectorAll('.seat')
 
 for (let index = 0; index < seats.length; index++) {
     const seat = seats[index];
-    console.log(seat);
     seat.addEventListener('click', function () {
-
 
         console.log('valo seat hobe dada');
 
@@ -57,12 +55,13 @@ for (let index = 0; index < seats.length; index++) {
 
 // ? listen phone number change 
 document.getElementById('phone').addEventListener('keyup', function () {
-    const phone = document.getElementById('phone').value
+    const phone = parseInt(document.getElementById('phone').value)
+    console.log(phone);
 
-    if (phone.length != 0 && selectedSeat.length != 0) {
-        document.getElementById('nextBtn').classList.remove('btn-disabled')
+    if (!isNaN(phone) && selectedSeat.length !== 0) {
+        document.getElementById('nextBtn').classList.remove('btn-disabled');
     } else {
-        document.getElementById('nextBtn').classList.add('btn-disabled')
+        document.getElementById('nextBtn').classList.add('btn-disabled');
     }
 });
 
@@ -96,6 +95,11 @@ document.addEventListener('DOMContentLoaded', function () {
 // ? next button click
 document.getElementById('nextBtn').addEventListener('click', function () {
     document.getElementById('myAlert').classList.remove('hidden')
+});
+
+// ? continue button
+document.getElementById('continueBtn').addEventListener('click', function () {
+    document.getElementById('myAlert').classList.add('hidden')
 });
 
 function getSeat(seatNumber) {
